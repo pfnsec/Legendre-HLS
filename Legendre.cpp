@@ -4,10 +4,6 @@
 
 #include "Legendre.hpp"
 
-//Set the precision as appropriate for your application
-//typedef ap_fixed<16,8> data_t;
-//typedef ap_int<8> iter_t;
-
 
 // n = 0
 inline data_t P0(data_t x)
@@ -67,6 +63,7 @@ data_t Pn(iter_t n, data_t x) {
   data_t pn   = pnm1;
 
   for (iter_t l = 3 ; l <= n ; l++)
+#pragma HLS unroll
   { 
     data_t i = (data_t) l;
 

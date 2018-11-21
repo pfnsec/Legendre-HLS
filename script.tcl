@@ -1,10 +1,11 @@
 open_project legendre_hls
-set_top Pn
+set_top LegendreTransform
 
 set tb_flags "-Wno-unknown-pragmas -D_XILINX"
 
 add_files Legendre.cpp 
 add_files Legendre.hpp 
+add_files LegendreTransform.cpp 
 
 add_files -tb Test.cpp -cflags $tb_flags
 
